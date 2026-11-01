@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #fffaf0;
+  color: #222;
+}
+
+header {
+  background: #f2b705;
+  padding: 1rem;
+  text-align: center;
+}
+header h1 { margin: 0; }
+header p { margin: 0.25rem 0 0; }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  main { grid-template-columns: 2fr 1fr; }
+  .persoon { grid-column: 1 / -1; }
+  #bestelling { position: sticky; top: 1rem; align-self: start; }
+}
+
+.persoon input {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+.hint { font-size: 0.85rem; color: #666; margin: 0.25rem 0 0; }
+
+.categorie h2 { border-bottom: 2px solid #f2b705; padding-bottom: 0.25rem; }
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.item .naam { flex: 1; }
+.item .prijs { color: #555; min-width: 4.5rem; text-align: right; }
+
+.teller { display: flex; align-items: center; gap: 0.4rem; }
+.teller span { min-width: 1.5rem; text-align: center; font-weight: bold; }
+
+button {
+  font-size: 1rem;
+  padding: 0.45rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #c0392b;
+  color: #fff;
+  cursor: pointer;
+}
+button.rond { width: 2.2rem; height: 2.2rem; padding: 0; border-radius: 50%; }
+button.secundair { background: #777; }
+button:disabled { opacity: 0.4; cursor: default; }
+
+#bestelling {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.regel {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+.regel small { color: #777; }
+.leeg { color: #888; }
+.totaal { font-size: 1.2rem; border-top: 2px solid #222; padding-top: 0.5rem; }
+.knoppen { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+dialog { max-width: 500px; width: 90%; border-radius: 8px; }
+dialog pre { white-space: pre-wrap; font-size: 0.95rem; }

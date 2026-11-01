@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frituur bestellen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Frituur bestellen</h1>
+    <p>Stel samen een bestelling met meerdere snacks samen.</p>
+  </header>
+
+  <main>
+    <section class="persoon">
+      <label for="persoon">Voor wie bestelt u nu?</label>
+      <input id="persoon" type="text" placeholder="Naam (optioneel)" maxlength="30" />
+      <p class="hint">Vul een naam in om later per persoon af te rekenen.</p>
+    </section>
+
+    <section id="menu" aria-label="Menukaart"></section>
+
+    <aside id="bestelling" aria-label="Bestelling">
+      <h2>Uw bestelling</h2>
+      <div id="regels"><p class="leeg">Nog niets gekozen.</p></div>
+      <p class="totaal">Totaal: <strong id="totaal">€ 0,00</strong></p>
+      <div class="knoppen">
+        <button id="toon-overzicht" type="button">Overzicht voor de balie</button>
+        <button id="leegmaken" type="button" class="secundair">Leegmaken</button>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="overzicht">
+    <h2>Overzicht</h2>
+    <pre id="overzicht-tekst"></pre>
+    <div class="knoppen">
+      <button id="kopieer" type="button">Kopiëren</button>
+      <button id="sluiten" type="button" class="secundair">Sluiten</button>
+    </div>
+  </dialog>
+
+  <script src="menu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
